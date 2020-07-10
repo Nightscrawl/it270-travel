@@ -31,8 +31,18 @@ header {
 }
 
 .top-row {
-	background: green;
-    height: 60px;
+	background: #9C8E42;
+	height: 60px;
+	padding-top: 15px;
+	padding-right: 30px;
+}
+
+.search {
+	float: right;
+}
+
+.search input {
+	padding: 6px;
 }
 
 .logo {
@@ -64,7 +74,7 @@ nav a {
 nav li:hover .dropdown {
     display: block;
     position: absolute;
-    background: orange;
+    background: #9C8E42;
     padding: 0px 7px 5px 5px;
 }
 
@@ -85,7 +95,15 @@ nav li:hover .dropdown li {
 }
 
 .hero img {
-	display: none;
+	display: none;	
+}
+
+.inner-page .hero {
+	background-image: url(../img/yellowstone-cropped2.jpg);
+	background-position: 0 150px;
+	min-height: 350px;
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 
 .inner {
@@ -104,9 +122,50 @@ nav li:hover .dropdown li {
     clear: both;
 }
 
+main {
+	float: left;
+	/* height: 500px; */
+	/* background: pink; */
+	width: calc(580 / 940 * 100%);
+}
+
+main img {
+	margin-bottom: 20px;
+}
+
+aside {
+	float: right;
+	/* height: 400px; */
+	/* background: #ccc; */
+	width: calc(340 / 940 * 100%);
+}
+
+.staff-pics li {
+	list-style-type: none;
+	float: left;
+	width: calc(160 / 340 * 100%);
+	margin-right: calc(20 / 340 * 100%);
+	margin-bottom: 20px;
+}
+
+.staff-pics li:nth-child(even) {
+	margin-right: 0;
+}
+
+.box {
+	background: #ddd;
+	padding: 3%;
+}
+
+.box li {
+	list-style-type: circle;
+	list-style-position: inside;
+}
+
 .row {
 	margin-bottom: 20px;
-    overflow: hidden;  /* allows margin-button for a box w floating elements. don't use in box w navigation */    
+	overflow: hidden;  /* allows margin-button for a box w floating elements. don't use in box w navigation */    
+	clear: both;
 }
 
 .third {
@@ -122,8 +181,17 @@ nav li:hover .dropdown li {
     width: calc(460 / 940 * 100%);
     float: left;
     /* height: 300px; */
-    background: beige;
+    /* background: beige; */
     margin-right: calc(20 / 940 * 100%);
+}
+
+figure {
+	margin-bottom: 6px;
+	background-color: #eee;
+}
+
+figcaption {
+	padding: 3px;
 }
 
 .third:last-of-type, .half:last-of-type {
@@ -137,36 +205,77 @@ footer {
 	padding-top: 25px;
 }
 
-.copy {
+.extra {
 	/* background: purple; */
 	text-align: center;
-	margin-top: 50px;
+	padding-top: 33px;
+	clear: both;
 }
 
 
 /* TYPOGRAPHY
 -------------------------------------------------------- */
 
+h1, h2, h3, h4 {
+	margin-bottom: 9px;
+	font-family: playfair, serif;	
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+h4 {
+	font: 1.2rem;
+}
+
 .home h1 {
 	font-size: 3.6rem;
 	text-align: center;
 }
 
-h1, h2, h3, h4 {
-	margin-bottom: 9px;
-	font-family: playfair, serif;
+.wrapper h1, .wrapper h2, .wrapper h3, .wrapper h4 {
+	color: #9C8E42;
+}
+
+nav a  {
+	color: #9C8E42;
+	font-weight: bold;
+}
+
+.dropdown a {
+	color: black;
+	font-weight: normal;
+}
+
+.wrapper a:link {
+	color: orange;
+}
+
+.wrapper a:visited, footer a:visited {
+	color: gray;
 }
 
 blockquote {
 	font-size: 2rem;
 	font-family: playfair, serif;
 	text-align: center;
+	font-style: italic;
 	margin: 0 8% 20px;
 }
 
 p {
 	margin-bottom: 20px;
 	font-size: 1.2rem;
+	line-height: 140%;
 }
 
 .important {
@@ -174,11 +283,24 @@ p {
 	margin: 0 5% 25px;
 }
 
+.important::first-line {
+	color: #9C8E42;
+}
+
 .read-more {
 	display: block;
 }
 
-.third p, .half p, .copy {
+main p {
+	font-size: 1.1rem;
+	
+}
+
+aside p {
+	font-size: .98rem;
+}
+
+.third p, .half p, .extra p {
 	font-size: 1rem;
 }
 
@@ -205,6 +327,12 @@ p {
 		min-height: auto;
 	}
 
+	.inner-page .hero {
+		background-image: none;
+		background-position: 0;
+		min-height: auto;
+	}
+
 	.hero img {
 		display: block;
 		margin-top: 150px;
@@ -224,10 +352,33 @@ p {
 	.third img {
 		margin: 0 auto;
 	}
+
+	.inner {
+		margin: 0 15px;
+	}
+	
+	.wrapper {    
+		margin: 30px 15px;
+	}
+
+	.top-row {
+		padding-right: 10px;
+	}
 }
 
 
 @media screen and (max-width: 700px) {
+	main {
+		float: none;
+		width: auto;
+		margin-bottom: 20px;
+	}
+	
+	aside {
+		float: none;
+		width: auto;
+		margin-bottom: 20px;
+	}
 	.half {
 		width: auto;
 		float: none;
@@ -295,7 +446,7 @@ p {
 	.primary-nav {
 		width: 100%;
 		float: none;
-		background-color: tan; /* change the menu color */
+		background-color: darkolivegreen; /* change the menu color */
 		background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.2));
 		display: block;
 		height: 50px;
