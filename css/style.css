@@ -16,13 +16,10 @@ html {
 body {
 	font-size: 1rem;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-    /* background: tan; */
 }
 
 
 header {
-	/* background: rgba(200, 200, 200, .6); */
-	background: #eee;
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -31,7 +28,6 @@ header {
 }
 
 .top-row {
-	background: #9C8E42;
 	height: 60px;
 	padding-top: 15px;
 	padding-right: 30px;
@@ -84,7 +80,10 @@ nav li:hover .dropdown li {
     margin-top: 3px;
 }
 
-.nav-button { display: none; } /* hide the navigation button by default */
+/* hide the navigation button by default */
+.nav-button {
+	display: none;
+}
 
 .home .hero {
 	background-image: url(../img/yellowstone-cropped.jpg);
@@ -107,26 +106,20 @@ nav li:hover .dropdown li {
 }
 
 .inner {
-	/* padding: 20px 0; */
     margin: 0 auto;
-    /* height: 100px; */
     max-width: 1100px;
-	/* background: pink; */
-	/* overflow: hidden; */
 }
 
 .wrapper {    
     max-width: 1100px;
-	/* background: pink; */
 	margin: 30px auto 0;
     clear: both;
 }
 
 main {
 	float: left;
-	/* height: 500px; */
-	/* background: pink; */
 	width: calc(580 / 940 * 100%);
+	margin-bottom: 30px;
 }
 
 main img {
@@ -135,9 +128,8 @@ main img {
 
 aside {
 	float: right;
-	/* height: 400px; */
-	/* background: #ccc; */
 	width: calc(340 / 940 * 100%);
+	margin-bottom: 30px;
 }
 
 .staff-pics li {
@@ -162,32 +154,28 @@ aside {
 	list-style-position: inside;
 }
 
+/* allows margin-button for a box w floating elements.
+   don't use in box w navigation */
 .row {
 	margin-bottom: 20px;
-	overflow: hidden;  /* allows margin-button for a box w floating elements. don't use in box w navigation */    
+	overflow: hidden;      
 	clear: both;
 }
 
 .third {
     width: calc(300 / 940 * 100%);
     float: left;
-    /* height: 300px; */
-    /* background: lightblue; */
 	margin-right: calc(20 / 940 * 100%);
-	/* margin-bottom: 15px; */
 }
 
 .half {
     width: calc(460 / 940 * 100%);
     float: left;
-    /* height: 300px; */
-    /* background: beige; */
     margin-right: calc(20 / 940 * 100%);
 }
 
 figure {
 	margin-bottom: 6px;
-	background-color: #eee;
 }
 
 figcaption {
@@ -198,15 +186,18 @@ figcaption {
     margin-right: 0px;
 }
 
+.buy {
+	padding: 20px;
+	clear: both;
+}
+
 footer {
     overflow: hidden;
     clear: both;
-	background: orange;
 	padding-top: 25px;
 }
 
 .extra {
-	/* background: purple; */
 	text-align: center;
 	padding-top: 33px;
 	clear: both;
@@ -242,26 +233,12 @@ h4 {
 	text-align: center;
 }
 
-.wrapper h1, .wrapper h2, .wrapper h3, .wrapper h4 {
-	color: #9C8E42;
-}
-
 nav a  {
-	color: #9C8E42;
 	font-weight: bold;
 }
 
 .dropdown a {
-	color: black;
 	font-weight: normal;
-}
-
-.wrapper a:link {
-	color: orange;
-}
-
-.wrapper a:visited, footer a:visited {
-	color: gray;
 }
 
 blockquote {
@@ -283,17 +260,16 @@ p {
 	margin: 0 5% 25px;
 }
 
-.important::first-line {
-	color: #9C8E42;
+.buy {
+	text-align: center;
 }
 
 .read-more {
 	display: block;
 }
 
-main p {
-	font-size: 1.1rem;
-	
+main p, .buy p {
+	font-size: 1.1rem;	
 }
 
 aside p {
@@ -304,6 +280,55 @@ aside p {
 	font-size: 1rem;
 }
 
+iframe {
+	width: 100%;
+	height: 280px;
+	margin: 0 auto 20px;
+	border: 0;
+}
+
+
+/* COLORS
+-------------------------------------------------------- */
+
+.top-row, nav li:hover .dropdown {
+	background-color: #9C8E42;
+}
+
+ nav a,
+.important::first-line,
+.buy p::first-line,
+.buy h2,
+.wrapper h1,
+.wrapper h2,
+.wrapper h3,
+.wrapper h4 {
+	color: #9C8E42;
+}
+
+.dropdown a {
+	color: black;
+}
+
+.wrapper a:link {
+	color: darkorange;
+}
+
+footer {
+	background-color: darkorange;
+}
+
+.wrapper a:visited, footer a:visited {
+	color: gray;
+}
+
+header, figure, .buy {
+	background-color: #eee;
+}
+
+
+/* MEDIA QUERIES
+-------------------------------------------------------- */
 
 @media screen and (max-width: 1160px) {
 	.inner {
@@ -317,10 +342,6 @@ aside p {
 
 
 @media screen and (max-width: 1110px) {
-	body {
-		/* background: orange; */
-	}
-
 	.home .hero {
 		background-image: none;
 		background-position: 0;
@@ -371,14 +392,13 @@ aside p {
 	main {
 		float: none;
 		width: auto;
-		margin-bottom: 20px;
 	}
 	
 	aside {
 		float: none;
 		width: auto;
-		margin-bottom: 20px;
 	}
+
 	.half {
 		width: auto;
 		float: none;
@@ -406,7 +426,7 @@ aside p {
 	}
 
 
-	/* Navigation Button
+	/* NAVIGATION BUTTON
 	-------------------------------------------------------- */
 
 	.nav-button {
@@ -428,9 +448,11 @@ aside p {
 		z-index: 999;
 		text-indent: -9999px;
 	}
+
 	.nav-button:hover {
 		background-color: rgba(0,0,0,.1);
 	}
+
 	.nav-button.open {
 		background: url('../img/close-icon-large.png'), linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.2));
 		background-position: center center;
@@ -438,10 +460,12 @@ aside p {
 		background-size: 21px, 100%;
 	}
 
-	/* Navigation Bar
+	/* NAVIGATION BAR
 	-------------------------------------------------------- */
 
-	body { padding-top: 50px; }
+	body {
+		padding-top: 50px;
+	}
 
 	.primary-nav {
 		width: 100%;
@@ -481,6 +505,7 @@ aside p {
 		width: 100%;
 		font-family: Arial;
 	}
+
 	.primary-nav li a {
 		display: block;
 		width: 100%;
@@ -493,16 +518,17 @@ aside p {
 		border-bottom: 1px solid rgba(0,0,0,.2);
 		border-top: 1px solid rgba(255,255,255,.1);
 	}
+
 	.primary-nav li a:hover {
 		background-color: rgba(0,0,0,.5);
 		border-top-color: transparent;
 	}
+
 	.primary-nav > li:first-child {
 		border-top: 1px solid rgba(0,0,0,.2);
 	}
 
 	/* Toggle the navigation bar open  */
-
 	.primary-nav.open {
 		height: auto;
 		padding-top: 50px;
@@ -512,7 +538,6 @@ aside p {
 	}
 
 	/* Submenus – optional .parent class indicates dropdowns */
-
 	.primary-nav > li:hover > a {
 		background: rgba(0,0,0,.5);
 		border-bottom-color: transparent;
