@@ -90,6 +90,7 @@ nav li:hover .dropdown li {
 	background-position: 0 150px;
 	min-height: 550px;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
 	background-size: 100%;
 }
 
